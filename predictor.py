@@ -3,6 +3,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import LabelEncoder
 import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.tree import plot_tree
 
 df = pd.read_csv('data.csv')
 
@@ -29,3 +31,7 @@ y_pred = model.predict(x_test)
 accuracy = accuracy_score(y_test, y_pred)
 print(f'Accuracy: {accuracy * 100:.2f}%')
 
+plt.figure(figsize=(12, 8))
+plot_tree(model, feature_names=x.columns, class_names=["No", "Yes"], filled=True)
+plt.title("Loan Approval Decision Tree")
+plt.show()

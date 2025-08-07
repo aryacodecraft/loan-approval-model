@@ -48,6 +48,16 @@ To set up and run the project, follow these steps:
    python src/predictor.py
    ```
 
+## Model Update: XGBoost Classifier
+
+The model has been updated from a Decision Tree Classifier to an **XGBoost Classifier**. XGBoost is a powerful ensemble method that builds multiple trees sequentially, where each new tree corrects errors made by the previous ones. This approach leads to improved predictive performance.
+
+### Improvements:
+- **Accuracy increased**: The model's accuracy improved from **73.96%** (Decision Tree) to **80.21%** (XGBoost).
+- **Precision metric added**: In addition to accuracy, the model now reports precision, providing a more comprehensive evaluation of its performance.
+
+XGBoost was chosen because it effectively corrects errors from previous trees, resulting in higher accuracy and robustness compared to a single decision tree.
+
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
